@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+		<title>{{ title }} - Stories</title>
+	{% else %}
+		<title>Stories</title>
+	{% endif %}
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'cstyle.css' %}">
+	<script src="{% static 'functions.js' %}"></script>
+</head>
+<body>
+	<div id="overlay-nav" class = "overlay">
+  		<a href="javascript:void(0)" class="closebtn" onclick="JavaScript:closeNav();">&times;</a>
+  	<div class="overlay-content">
+    	{% for post in post_objects %}
+			<a href="">{{post}}</a>
+		{% endfor %}
+  	</div>
+	</div>
+	<div class = "box-area">
+		<header>
+			<div class = "wrapper">
+				<div class="logo">
+					<a href="#"><img src="{% static 'photo/logo.png' %}" width ="22px" height="22px" ></a>
+					<a href="{% url 'home-view' %}">Home</a>
+					<a href= "#" onclick="JavaScript:openNav();">Stories</a>
+				</div>
+				<nav>
+					<a href="#">Contact Us</a>
+				</nav>
+			</div>
+		</header>
+
+		{% block content %}
+		{% endblock content %}
+
+		</div>
+		<div class="footer-area">
+			<div class="wrapper">
+				<h2>Contact</h2>
+				<p>09123456789</p>
+				<p>dummy_acc@gmail.com</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
