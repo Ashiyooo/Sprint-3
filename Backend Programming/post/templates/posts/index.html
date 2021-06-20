@@ -1,0 +1,19 @@
+{% extends "posts/base.html" %}
+
+{% block content %}
+	<div class="content-area">
+		<div class="wrapper">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<h1>This our list of post</h1>
+			{% for post in post_objects %}
+				<p>{{post}}</p>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock content %}
